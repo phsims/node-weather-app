@@ -12,9 +12,9 @@ const getForcast = (lat, long, callback) => {
     } else {
       const decription = `${res.body.current.weather_descriptions[0]}.`;
       const current = `It is currrently ${res.body.current.temperature} degrees and feels like ${res.body.current.feelslike} degrees.`;
-      const highLow = `Todays there will be a high temprature of ${res.body.forecast[0].mintemp} of and a low of ${res.body.forecast[0].maxtemp}`;
+      const humidity = `The humidity is currently  ${res.body.current.humidity}.`;
 
-      callback(undefined, { decription, current, highLow });
+      callback(undefined, { decription, current, humidity });
     }
   });
 };

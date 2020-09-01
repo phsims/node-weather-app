@@ -3,12 +3,12 @@ const search = document.querySelector("input");
 const searchLocation = document.querySelector("#searchLocation");
 const decription = document.querySelector("#decription");
 const current = document.querySelector("#current");
-const highLow = document.querySelector("#highLow");
-const errorMsg = document.querySelector("#error");
+const humidity = document.querySelector("#humidity");
+const errorMsg = document.querySelector("#errorMsg");
 
 weatherForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  clearFields()
+  clearFields();
 
   fetch(`/weather?address=${search.value}`).then((res) => {
     res.json().then((data) => {
@@ -17,15 +17,15 @@ weatherForm.addEventListener("submit", (event) => {
         (searchLocation.textContent = data.location),
           (decription.textContent = data.forcast.decription),
           (current.textContent = data.forcast.current),
-          (highLow.textContent = data.forcast.highLow);
+          (humidity.textContent = data.forcast.humidity);
     });
   });
 });
 
-function clearFields(){
-  (searchLocation.textContent = null),
-  (decription.textContent = null),
-  (current.textContent = null),
-  (highLow.textContent = null),
-  errorMsg.textContent=null;
+function clearFields() {
+  searchLocation.textContent = null;
+  decription.textContent = null;
+  current.textContent = null;
+  humidity.textContent = null;
+  errorMsg.textContent = null;
 }
