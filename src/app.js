@@ -64,12 +64,6 @@ app.get("/weather", (req, res) => {
     });
   });
 
-
-
-  //   res.render('weather',{
-  //       title:'weather',
-  //       error:'its broken'
-  //   })
 });
 
 app.get("*", (req, res) => {
@@ -80,5 +74,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port 3000 ${port}`);
+  console.log(`Listening on port ${port}`);
 });
